@@ -27,6 +27,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
+use function Termwind\parse;
+
 class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
@@ -34,6 +36,11 @@ class ProductResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-s-queue-list';
 
     protected static SubNavigationPosition $subNavigationPosition = SubNavigationPosition::End;
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->forVendor();
+    }
 
     public static function form(Form $form): Form
     {
