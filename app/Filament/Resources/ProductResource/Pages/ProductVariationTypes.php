@@ -28,7 +28,6 @@ class ProductVariationTypes extends EditRecord
                     ->label(false)
                     ->relationship()
                     ->collapsible()
-                    ->defaultItems(1)
                     ->addActionLabel('Add new variation type')
                     ->columns(2)
                     ->columnSpan(2)
@@ -58,6 +57,7 @@ class ProductVariationTypes extends EditRecord
                             ])
                             ->columnSpan(2)
                     ])
+                    ->defaultItems(1)
             ]);
     }
 
