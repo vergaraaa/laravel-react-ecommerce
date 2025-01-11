@@ -6,7 +6,7 @@ interface Props {
 
 export const CurrencyFormatter = ({
   amount,
-  currency = 'USD ',
+  currency = 'USD',
   locale,
 }: Props) => {
   return new Intl.NumberFormat(locale, {
