@@ -10,6 +10,8 @@ Route::get('/', [ProductController::class, 'home'])->name('dashboard');
 
 Route::get('/product/{product:slug}', [ProductController::class, 'show'])->name('product.show');
 
+Route::post('/cart/store/{product}', function () {});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
